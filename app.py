@@ -2,6 +2,7 @@ import streamlit as st
 from auth.login import login
 from admin.admin_panel import admin_panel
 from auth.register import register
+from rag.user_chat import user_chat
 
 if "logged_in" not in st.session_state:
     st.session_state["logged_in"] = False
@@ -18,4 +19,4 @@ else:
     if st.session_state["role"] == "admin":
         admin_panel()
     else:
-        st.write("user chat")
+        user_chat()
