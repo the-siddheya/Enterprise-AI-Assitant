@@ -9,6 +9,13 @@ def admin_panel():
 
     st.subheader("Upload Files")
 
+    df_files = pd.read_csv(DOCUMENTS_FILE)
+    for idx, row in df_files.iterrows():
+        st.sidebar.write(f"{row['filename']} - {row['status']}")
+
+    if st.sidebar.button("Ingest Pending Files"):
+        st.write("Ingesting pending files...")
+
     uploaded_file = st.file_uploader(
         "Choose a file",
         type=["pdf", "docx", "txt"]
