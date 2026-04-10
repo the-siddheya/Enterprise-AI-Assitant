@@ -1,3 +1,9 @@
 streamlit
 pandas
 numpy
+pypdf
+python-docx
+docx2txt
+chromadb
+sentence-transformers
+ollama
